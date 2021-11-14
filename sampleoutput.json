@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import NewsItem from './NewsItem'
-
-export class News extends Component {
-
-    articles = [
+// 20211113230815
+// https://newsapi.org/v2/top-headlines?country=us&apiKey=4c57abd292f14ee691ab7cfe36596f9e&q=trump
+{
+    "status": "ok",
+    "totalResults": 3,
+    "articles": [
         {
             "source": {
                 "id": null,
@@ -43,30 +43,5 @@ export class News extends Component {
             "publishedAt": "2021-11-13T21:30:49Z",
             "content": "A new poll found that more Republicans now think that Donald Trump will likely be reinstated as president before the end of 2021.\r\nThe survey by the Economist/YouGov was conducted between November 6 … [+3078 chars]"
         }
-    ];
-
-    constructor(){
-        super();
-        console.log('Hi Constructor from news component');
-        this.state= {
-            articles : this.articles,
-            laoding : false
-        }
-    }
-    render() {
-        return (
-            <div className='container my-5'>
-                <h3 className="my-3">Quick News - Headlines</h3>
-                <div className="row">
-                    {this.state.articles.map((element)=>{                
-                        return <div key={element.url} className="col-md-4 my-2">
-                            <NewsItem title ={element.title.slice(0,45)} desc={element.description.slice(0,45)} imageurl={element.urlToImage}  newsurl={element.url} />
-                        </div>
-                    })}
-                </div>
-            </div>
-        )
-    }
+    ]
 }
-
-export default News
