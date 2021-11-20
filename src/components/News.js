@@ -10,6 +10,7 @@ export class News extends Component {
             articles : [],
             laoding : false,
             page:1,
+            stopNext:0,
         }
     }
 
@@ -29,7 +30,8 @@ export class News extends Component {
         let pareseData = await data.json(data);
         this.setState({
             page:this.state.page-1,
-            articles: pareseData.articles
+            articles: pareseData.articles,
+            stopNext:0,
         })
             
     }
@@ -38,7 +40,9 @@ export class News extends Component {
         console.log('Next')
 
         if(this.state.page+1>(this.state.totalResults)/30){
-
+            this.setState({
+                stopNext:1,
+            })
         }
         else
         {    
@@ -50,7 +54,8 @@ export class News extends Component {
 
             this.setState({
                 page:this.state.page+1,
-                articles: pareseData.articles
+                articles: pareseData.articles,
+                stopNext:0,
             })
         }
 
@@ -70,7 +75,7 @@ export class News extends Component {
                 </div>
                 <div className='d-flex justify-content-around my-5'>
                 <button disabled={this.state.page<=1} type="button" className="btn btn-dark mx-2" onClick={this.handlePrevious}>&larr; Previous</button>
-                <button  type="button" className="btn btn-dark mx-2" onClick={this.handleNext}>Next &rarr; </button>
+                <button disabled={this.state.stopNext==1} type="button" className="btn btn-dark mx-2" onClick={this.handleNext}>Next &rarr; </button>
                 </div>
             </div>
         )
