@@ -1,8 +1,25 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
+import Spinner from './Spinner';
+import PropTypes from 'prop-types'
+
 
 export class News extends Component {
 
+
+    static propTypes = {
+        pageSize: PropTypes.number,
+        country: PropTypes.string,
+        category: PropTypes.string,
+    }
+
+    static defaultProps = {
+        pageSize: 8,
+        country: 'us',
+        category: 'general',
+    }
+    
+    
     constructor(){
         super();
         console.log('Hi Constructor from news component');
@@ -16,46 +33,54 @@ export class News extends Component {
 
     async componentDidMount(){
         // console.log('Hello CDM');
-        let url = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=30&page=1" ;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=${this.props.pageSize}&page=1` ;
+        this.setState({laoding:true})
         let data = await fetch(url);
         let pareseData = await data.json(data);
         // console.log(pareseData);
-        this.setState({articles: pareseData.articles,totalResults:pareseData.totalResults})
+        this.setState({
+            articles: pareseData.articles,
+            totalResults:pareseData.totalResults,
+            laoding : false,
+        })
     }
 
     handlePrevious = async ()=>{
         console.log('Prevous');
-        let url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=30&page=${this.state.page-1}` ;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=${this.props.pageSize}&page=${this.state.page-1}` ;
+        this.setState({laoding:true})
         let data = await fetch(url);
         let pareseData = await data.json(data);
         this.setState({
             page:this.state.page-1,
             articles: pareseData.articles,
             stopNext:0,
+            laoding : false,
         })
             
     }
 
     handleNext =async ()=>{
-        console.log('Next')
-
-        if(this.state.page+1>(this.state.totalResults)/30){
+        // console.log('Next')
+        this.setState({laoding:true})
+        if(this.state.page+1>(this.state.totalResults)/this.props.pageSize){
             this.setState({
                 stopNext:1,
+                laoding:false
             })
         }
         else
         {    
-            let url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=30&page=${this.state.page+1}` ;
+            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=${this.props.pageSize}&page=${this.state.page+1}` ;
+            this.setState({laoding:true})
             let data = await fetch(url);
             let pareseData = await data.json(data);
-
-            console.log(pareseData);
-
+            //console.log(pareseData);
             this.setState({
                 page:this.state.page+1,
                 articles: pareseData.articles,
                 stopNext:0,
+                laoding : false,
             })
         }
 
@@ -65,9 +90,10 @@ export class News extends Component {
     render() {
         return (
             <div className='container my-5'>
-                <h3 className="my-3">Quick News - Headlines<span>Total Results : {this.state.totalResults}</span></h3>
+                <h3 className="my-3 text-center">Quick News - Headlines<span>Total Results : {this.state.totalResults}</span></h3>
+                {this.state.laoding && <Spinner/>}
                 <div className="row">
-                    {this.state.articles.map((element)=>{                
+                    {!this.state.loading && this.state.articles.map((element)=>{                
                         return <div key={element?element.url:''} className="col-md-4 my-2">
                             <NewsItem title ={element ? element.title:''} desc={element?element.description:''} imageurl={element?element.urlToImage:''}  newsurl={element?element.url:''} />
                         </div>
