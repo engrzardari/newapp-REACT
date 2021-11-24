@@ -1,0 +1,106 @@
+============
+Navbar 
+===========
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+export class Navbar extends Component {
+    static propTypes = {
+
+    }
+
+    render() {
+        return (
+        <div>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <a className="navbar-brand" href="/">Navbar</a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item active">
+                        <a className="nav-link" href="/">Home</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/saddam">Saddam</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/mushahid">Mushahid</a>
+                    </li>  
+                    <li className="nav-item">
+                        <a className="nav-link" href="/niaz">Niaz</a>
+                    </li>          
+                </ul>
+            </div>
+            </nav>
+        </div>
+        )
+    }
+}
+
+export default Navbar
+
+========================= Items =============================== 
+
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+export class Items extends Component {
+    static propTypes = {
+
+    }
+
+    render() {
+        return (
+            <>
+            <div>
+                <p>This a component of {this.props.propname}</p>
+            </div>
+            </>
+        )
+    }
+}
+
+export default Items
+
+============================================ App.js ====================
+
+import logo from './logo.svg';
+import './App.css';
+
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Navbar from './components/Navbar';
+import Items from './components/Items';
+import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom'
+
+export class App extends Component {
+  static propTypes = {
+
+  }
+
+  render() {
+    return (  
+      <>  
+        <Navbar/>
+        <Router>
+          <Routes>
+            <Route exact path="/saddam" element={<Items propname={'Saddam Zardari'}/>}/>
+            <Route exact path="/mushahid" element={<Items propname={'Mushahid Zardari'}/>}/>
+            <Route exact path="/niaz" element={<Items propname={'Niaz Zardari'}/>}/>
+          </Routes>
+        </Router>
+      </>
+    )
+  }
+}
+
+export default App
+
+
+=============================================================
+
+
+
+
