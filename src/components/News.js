@@ -20,8 +20,8 @@ export class News extends Component {
     }
     
     
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         console.log('Hi Constructor from news component');
         this.state= {
             articles : [],
@@ -29,6 +29,8 @@ export class News extends Component {
             page:1,
             stopNext:0,
         }
+
+        document.title = this.props.category;
     }
 
 
