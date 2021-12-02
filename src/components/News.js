@@ -48,16 +48,17 @@ export class News extends Component {
 
     async componentDidMount(){
         // console.log('Hello CDM');
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=${this.props.pageSize}&page=1` ;
-        this.setState({laoding:true})
-        let data = await fetch(url);
-        let pareseData = await data.json(data);
-        // console.log(pareseData);
-        this.setState({
-            articles: pareseData.articles,
-            totalResults:pareseData.totalResults,
-            laoding : false,
-        })
+        // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=${this.props.pageSize}&page=1` ;
+        // this.setState({laoding:true})
+        // let data = await fetch(url);
+        // let pareseData = await data.json(data);
+        // // console.log(pareseData);
+        // this.setState({
+        //     articles: pareseData.articles,
+        //     totalResults:pareseData.totalResults,
+        //     laoding : false,
+        // })
+        this.UpdatePage();
     }
 
     handlePrevious = async ()=>{
