@@ -95,13 +95,13 @@ export class News extends Component {
                 <div className="row">
                     {!this.state.loading && this.state.articles.map((element)=>{                
                         return <div key={element?element.url:''} className="col-md-4 my-2">
-                            <NewsItem title ={element ? element.title:''} desc={element?element.description:''} imageurl={element?element.urlToImage:''}  newsurl={element?element.url:''} />
+                            <NewsItem title ={element ? element.title:''} desc={element?element.description:''} imageurl={element?element.urlToImage:''}  newsurl={element?element.url:''} author={element?element.author:'Unknown'} publishedAt={element?element.publishedAt:''} source={element?element.source.name:''}/>
                         </div>
                     })}
                 </div>
                 <div className='d-flex justify-content-around my-5'>
                 <button disabled={this.state.page<=1} type="button" className="btn btn-dark mx-2" onClick={this.handlePrevious}>&larr; Previous</button>
-                <button disabled={this.state.stopNext==1} type="button" className="btn btn-dark mx-2" onClick={this.handleNext}>Next &rarr; </button>
+                <button disabled={this.state.stopNext===1} type="button" className="btn btn-dark mx-2" onClick={this.handleNext}>Next &rarr; </button>
                 </div>
             </div>
         )

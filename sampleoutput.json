@@ -1,5 +1,4 @@
-// 20211113230815
-// https://newsapi.org/v2/top-headlines?country=us&apiKey=4c57abd292f14ee691ab7cfe36596f9e&q=trump
+
 {
     "status": "ok",
     "totalResults": 3,
@@ -43,20 +42,101 @@
             "publishedAt": "2021-11-13T21:30:49Z",
             "content": "A new poll found that more Republicans now think that Donald Trump will likely be reinstated as president before the end of 2021.\r\nThe survey by the Economist/YouGov was conducted between November 6 … [+3078 chars]"
         }
+        ,
+        {
+            "source": {
+                "id": "newsweek",
+                "name": "Newsweek"
+            },
+            "author": "Fatma Khaled",
+            "title": "Marjorie Taylor Greene Calls AOC, the Squad 'Brave' for Voting Against Infrastructure Bill - Newsweek",
+            "description": "The number of Republicans who think that Donald Trump will \"very likely\" be reinstated as president before 2021 ends increased 2 percent this month.",
+            "url": "https://www.newsweek.com/republicans-saying-trump-likely-reinstated-years-end-jumps-28-percent-1649012",
+            "urlToImage": "https://d.newsweek.com/en/full/1931990/more-republicans-trump-will-reinstated.jpg",
+            "publishedAt": "2021-11-13T21:30:49Z",
+            "content": "A new poll found that more Republicans now think that Donald Trump will likely be reinstated as president before the end of 2021.\r\nThe survey by the Economist/YouGov was conducted between November 6 … [+3078 chars]"
+        }
+        ,
+        {
+            "source": {
+                "id": "newsweek",
+                "name": "Newsweek"
+            },
+            "author": "Fatma Khaled",
+            "title": "Marjorie Taylor Greene Calls AOC, the Squad 'Brave' for Voting Against Infrastructure Bill - Newsweek",
+            "description": "The number of Republicans who think that Donald Trump will \"very likely\" be reinstated as president before 2021 ends increased 2 percent this month.",
+            "url": "https://www.newsweek.com/republicans-saying-trump-likely-reinstated-years-end-jumps-28-percent-1649012",
+            "urlToImage": "https://d.newsweek.com/en/full/1931990/more-republicans-trump-will-reinstated.jpg",
+            "publishedAt": "2021-11-13T21:30:49Z",
+            "content": "A new poll found that more Republicans now think that Donald Trump will likely be reinstated as president before the end of 2021.\r\nThe survey by the Economist/YouGov was conducted between November 6 … [+3078 chars]"
+        }
+        ,{
+            "source": {
+                "id": "newsweek",
+                "name": "Newsweek"
+            },
+            "author": "Fatma Khaled",
+            "title": "Marjorie Taylor Greene Calls AOC, the Squad 'Brave' for Voting Against Infrastructure Bill - Newsweek",
+            "description": "The number of Republicans who think that Donald Trump will \"very likely\" be reinstated as president before 2021 ends increased 2 percent this month.",
+            "url": "https://www.newsweek.com/republicans-saying-trump-likely-reinstated-years-end-jumps-28-percent-1649012",
+            "urlToImage": "https://d.newsweek.com/en/full/1931990/more-republicans-trump-will-reinstated.jpg",
+            "publishedAt": "2021-11-13T21:30:49Z",
+            "content": "A new poll found that more Republicans now think that Donald Trump will likely be reinstated as president before the end of 2021.\r\nThe survey by the Economist/YouGov was conducted between November 6 … [+3078 chars]"
+        }
+        ,
+        {
+            "source": {
+                "id": "newsweek",
+                "name": "Newsweek"
+            },
+            "author": "Fatma Khaled",
+            "title": "Marjorie Taylor Greene Calls AOC, the Squad 'Brave' for Voting Against Infrastructure Bill - Newsweek",
+            "description": "The number of Republicans who think that Donald Trump will \"very likely\" be reinstated as president before 2021 ends increased 2 percent this month.",
+            "url": "https://www.newsweek.com/republicans-saying-trump-likely-reinstated-years-end-jumps-28-percent-1649012",
+            "urlToImage": "https://d.newsweek.com/en/full/1931990/more-republicans-trump-will-reinstated.jpg",
+            "publishedAt": "2021-11-13T21:30:49Z",
+            "content": "A new poll found that more Republicans now think that Donald Trump will likely be reinstated as president before the end of 2021.\r\nThe survey by the Economist/YouGov was conducted between November 6 … [+3078 chars]"
+        }
+        ,
+        {
+            "source": {
+                "id": "newsweek",
+                "name": "Newsweek"
+            },
+            "author": "Fatma Khaled",
+            "title": "Marjorie Taylor Greene Calls AOC, the Squad 'Brave' for Voting Against Infrastructure Bill - Newsweek",
+            "description": "The number of Republicans who think that Donald Trump will \"very likely\" be reinstated as president before 2021 ends increased 2 percent this month.",
+            "url": "https://www.newsweek.com/republicans-saying-trump-likely-reinstated-years-end-jumps-28-percent-1649012",
+            "urlToImage": "https://d.newsweek.com/en/full/1931990/more-republicans-trump-will-reinstated.jpg",
+            "publishedAt": "2021-11-13T21:30:49Z",
+            "content": "A new poll found that more Republicans now think that Donald Trump will likely be reinstated as president before the end of 2021.\r\nThe survey by the Economist/YouGov was conducted between November 6 … [+3078 chars]"
+        },
+        {
+            "source": {
+                "id": "newsweek",
+                "name": "Newsweek"
+            },
+            "author": "Fatma Khaled",
+            "title": "Marjorie Taylor Greene Calls AOC, the Squad 'Brave' for Voting Against Infrastructure Bill - Newsweek",
+            "description": "The number of Republicans who think that Donald Trump will \"very likely\" be reinstated as president before 2021 ends increased 2 percent this month.",
+            "url": "https://www.newsweek.com/republicans-saying-trump-likely-reinstated-years-end-jumps-28-percent-1649012",
+            "urlToImage": "https://d.newsweek.com/en/full/1931990/more-republicans-trump-will-reinstated.jpg",
+            "publishedAt": "2021-11-13T21:30:49Z",
+            "content": "A new poll found that more Republicans now think that Donald Trump will likely be reinstated as president before the end of 2021.\r\nThe survey by the Economist/YouGov was conducted between November 6 … [+3078 chars]"
+        },
+        {
+            "source": {
+                "id": "newsweek",
+                "name": "Newsweek"
+            },
+            "author": "Fatma Khaled",
+            "title": "Marjorie Taylor Greene Calls AOC, the Squad 'Brave' for Voting Against Infrastructure Bill - Newsweek",
+            "description": "The number of Republicans who think that Donald Trump will \"very likely\" be reinstated as president before 2021 ends increased 2 percent this month.",
+            "url": "https://www.newsweek.com/republicans-saying-trump-likely-reinstated-years-end-jumps-28-percent-1649012",
+            "urlToImage": "https://d.newsweek.com/en/full/1931990/more-republicans-trump-will-reinstated.jpg",
+            "publishedAt": "2021-11-13T21:30:49Z",
+            "content": "A new poll found that more Republicans now think that Donald Trump will likely be reinstated as president before the end of 2021.\r\nThe survey by the Economist/YouGov was conducted between November 6 … [+3078 chars]"
+        }
+
     ]
 }
-
-
-<Router>
-<NabBar/>
-<Switch>
-<Route path="/"><News pageSize={3} country={'us'} category={'general'}/></Route>
-<Route path="/business"><News pageSize={3} country={'us'} category={'business'}/></Route>
-<Route path="/entertainment"><News pageSize={3} country={'us'} category={'entertainment'}/></Route>
-<Route path="/general"><News pageSize={3} country={'us'} category={'general'}/></Route>
-<Route path="/health"><News pageSize={3} country={'us'} category={'health'}/></Route>
-<Route path="/science"><News pageSize={3} country={'us'} category={'science'}/></Route>
-<Route path="/sports"><News pageSize={3} country={'us'} category={'sports'}/></Route>
-<Route path="/technology"><News pageSize={3} country={'us'} category={'technology'}/></Route>
-</Switch>
-</Router>
