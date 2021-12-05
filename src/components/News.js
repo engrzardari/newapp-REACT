@@ -11,12 +11,14 @@ export class News extends Component {
         pageSize: PropTypes.number,
         country: PropTypes.string,
         category: PropTypes.string,
+        ApiKey: PropTypes.string,
     }
 
     static defaultProps = {
         pageSize: 8,
         country: 'us',
         category: 'general',
+        ApiKey:'',
     }
     
     capitalizeLetter = (str)=>{
@@ -38,22 +40,30 @@ export class News extends Component {
 
 
     async UpdatePage(){
-
-        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=${this.props.pageSize}&page=${this.state.page}` ;
         this.setState({laoding:true})
+        this.props.setProgress(0)
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.ApiKey}&pageSize=${this.props.pageSize}&page=${this.state.page}` ;
+        this.setState({laoding:true})
+        this.props.setProgress(30)
         let data = await fetch(url);
         let pareseData = await data.json(data);
+        this.props.setProgress(50)
         // console.log(pareseData);
         this.setState({
             articles: pareseData.articles,
             totalResults:pareseData.totalResults,
-            laoding : false,
+            laoding : false            
         })
+        this.props.setProgress(65)
+        this.props.setProgress(75)
+        this.props.setProgress(100)
+        this.props.getTotalResults(this.state.totalResults);
+        
     }
 
     async componentDidMount(){
         // console.log('Hello CDM');
-        // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=${this.props.pageSize}&page=1` ;
+        // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.ApiKey}&pageSize=${this.props.pageSize}&page=1` ;
         // this.setState({laoding:true})
         // let data = await fetch(url);
         // let pareseData = await data.json(data);
@@ -64,13 +74,13 @@ export class News extends Component {
         //     laoding : false,
         // })
         this.UpdatePage();
+    
     }
 
     fetchMoreData = async () => {
             
         this.setState({page:this.state.page+1});
-            const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4c57abd292f14ee691ab7cfe36596f9e&pageSize=${this.props.pageSize}&page=${this.state.page}` ;
-            
+            const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.ApiKey}&pageSize=${this.props.pageSize}&page=${this.state.page}` ;            
             let data = await fetch(url);
             let pareseData = await data.json(data);
             // console.log(pareseData);
@@ -79,6 +89,7 @@ export class News extends Component {
                 totalResults:pareseData.totalResults,
                 laoding : false,
             })
+                        
       };
  
 
@@ -86,7 +97,6 @@ export class News extends Component {
         return (
             <>
                 <h3 className="my-3 text-center"> Top {(this.capitalizeLetter(this.props.category)!='General') ? this.capitalizeLetter(this.props.category) :''} Headlines</h3>
-                <span className='results'>Results : {this.state.totalResults}</span>
                  {this.state.laoding && <Spinner/>} 
                 <InfiniteScroll
                 dataLength={this.state.articles.length}

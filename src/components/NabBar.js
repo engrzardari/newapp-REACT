@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
   
 export class NabBar extends Component {
     static propTypes = {
-
+      
     }
 
     render() {
@@ -27,7 +27,8 @@ export class NabBar extends Component {
                             <li className="nav-item"><a className="nav-link" href="/science">Science</a></li>
                             <li className="nav-item"><a className="nav-link" href="/sports">Sports</a></li>
                             <li className="nav-item"><a className="nav-link" href="/technology">Technology</a></li>
-                        </ul>                    
+                        </ul>   
+                        <div><span className='results'>Total Results : {this.props.totalResults}</span></div>                 
                         </div>
                     </div>
                 </nav>
